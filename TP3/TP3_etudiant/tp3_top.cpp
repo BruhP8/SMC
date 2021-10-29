@@ -223,16 +223,27 @@ int _main(int argc, char *argv[])
 	VciSimpleRam<vci_param>* ram;
 	ram = new VciSimpleRam<vci_param>("ram",
                                           IntTab(TGTID_RAM),
-                                          maptab);
+                                          maptab,
+                                          loader 
+                                          );
 
 	VciMultiTty<vci_param>* tty;
-	tty = new VciMultiTty<vci_param>(TO BE COMPLETED);
+	tty = new VciMultiTty<vci_param>("tty",
+                                         IntTab(TGTID_TTY),
+                                         maptab,
+                                         "writeMeBillGates",
+                                         NULL);
 
 	VciGcdCoprocessor<vci_param>* gcd;
-	gcd = new VciGcdCoprocessor<vci_param>(TO BE COMPLETED);
+	gcd = new VciGcdCoprocessor<vci_param>("gcd",
+                                               IntTab(TGTID_GCD),
+                                               maptab);
 
 	VciVgsb<vci_param>* bus;		
-	bus = new VciVgsb<vci_param>(TO BE COMPLETED);
+	bus = new VciVgsb<vci_param>("bus",
+                                     maptab,
+                                     1, 
+                                     4); //TODO CHECK
 
 	//////////////////////////////////////////////////////////////////////////
 	// Net-List
@@ -266,11 +277,13 @@ int _main(int argc, char *argv[])
 
 	bus->p_clk(signal_clk);
 	bus->p_resetn(signal_resetn);
-        TO BE COMPLETED
-        TO BE COMPLETED
-        TO BE COMPLETED
-        TO BE COMPLETED
-        TO BE COMPLETED
+        
+        bus->p_to_initiatior[0](signal_vci_proc);
+        bus->p_to_target[TGTID_RAM](signal_vci_ram);
+        bus->p_to_target[TGTID_ROM](signal_vci_rom);
+        bus->p_to_target[TGTID_TTY](signal_vci_tty);
+        bus->p_to_target[TGTID_GCD](signal_vci_gcd);
+        
 
 	//////////////////////////////////////////////////////////////////////////
 	// simulation
