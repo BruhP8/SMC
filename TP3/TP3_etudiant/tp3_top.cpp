@@ -165,7 +165,7 @@ int _main(int argc, char *argv[])
 	//////////////////////////////////////////////////////////////////////////
 	// Mapping Table
 	//////////////////////////////////////////////////////////////////////////
-	MappingTable maptab(TO BE COMPLETED);
+	MappingTable maptab(addr_size, IntTab(2), IntTab(2), 0xFF000000);
 
 	maptab.add(Segment("seg_reset", SEG_RESET_BASE, SEG_RESET_SIZE, IntTab(TGTID_ROM), true));
 
@@ -199,16 +199,31 @@ int _main(int argc, char *argv[])
 	// Components
 	//////////////////////////////////////////////////////////////////////////
 
-	Loader	loader(TO BE COMPLETED);
+	Loader	loader(sys_path, app_path);
 
 	VciXcacheWrapper<vci_param, Mips32ElIss>* proc
-	proc = new VciXcacheWrapper<vci_param, Mips32ElIss>(TO BE COMPLETED);
+	proc = new VciXcacheWrapper<vci_param, Mips32ElIss>("proc",
+                                                            0, 
+                                                            maptab, 
+                                                            IntTab(0), 
+                                                            icache_ways, 
+                                                            icache_sets, 
+                                                            icache_words,
+                                                            dcache_ways, 
+                                                            dcache_sets, 
+                                                            dcache_words);
 
 	VciSimpleRam<vci_param>* rom;
-	rom = new VciSimpleRam<vci_param>(TO BE COMPLETED);
+	rom = new VciSimpleRam<vci_param>("rom",
+                                          IntTab(TGTID_ROM),
+                                          maptab, 
+                                          loader 
+                                          );
 
 	VciSimpleRam<vci_param>* ram;
-	ram = new VciSimpleRam<vci_param>(TO BE COMPLETED);
+	ram = new VciSimpleRam<vci_param>("ram",
+                                          IntTab(TGTID_RAM),
+                                          maptab);
 
 	VciMultiTty<vci_param>* tty;
 	tty = new VciMultiTty<vci_param>(TO BE COMPLETED);
