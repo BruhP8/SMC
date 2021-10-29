@@ -1,0 +1,24 @@
+Infrastructure de communications
+
+    l'interconnect route les messages vers la bonne cible -> nécessité d'un protocole. Aiguille les instr Rd/Wr + Store Conditionnal SC et LL
+                                                                                                    et  Data/Ack
+    Initiateurs (processeurs), cibles mémoires. Nb cible généralement proportionnel a nb init
+
+    Bus : achemine les commandes. Simple, pas cher, MAIS difficilement scalable (env 10 init pas plus) et seulement 1 mot / cycle + une seulle comm par bus
+    Crossbar : chaque initiateur est connecté a toutes les cibles, chaque cible a son propre arbitre qui selectionne la commande qui passe.
+               On peut avoir autant de communications // que de couples init/cible
+               Très bon débit / bandwidth, mais cout élevé mais très complexe et ni scalable (8/10 init maxi)
+    Réseaux multi-étages : compromis. routeurs crossbar 2x2. Cout proportionnel au nb d'étages de xbars
+
+Protocole VCI/OCP
+
+    3 types d'IP
+        Hard IP (HW) : dessin des masques d'une techno specifique
+        Soft IP (SW) : modèles synthetisable (RTL) ~ VHDL
+        Firm IP (FW) : netlist de portes routables
+
+    Tous les blocs doivent pouvoir communiquer entre eux !
+    VCI : Virtual Component Interface, issu d'un consortium, protocole fermé
+    OCP : Open Core Protocol, aussi issu de l'union de constructeurs mais Open
+    Très similaires
+    ne supporte pas les pertes de paquets

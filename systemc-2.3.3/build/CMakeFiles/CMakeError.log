@@ -1,0 +1,252 @@
+Determining if the __sparc exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_dd8ed/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dd8ed.dir/build.make CMakeFiles/cmTC_dd8ed.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dd8ed.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dd8ed.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__sparc’ undeclared (first use in this function)
+    7 |   return ((int*)(&__sparc))[argc];
+      |                   ^~~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_dd8ed.dir/build.make:85: CMakeFiles/cmTC_dd8ed.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_dd8ed/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __sparc
+  return ((int*)(&__sparc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __sparc__ exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_bf3d4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bf3d4.dir/build.make CMakeFiles/cmTC_bf3d4.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf3d4.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bf3d4.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__sparc__’ undeclared (first use in this function)
+    7 |   return ((int*)(&__sparc__))[argc];
+      |                   ^~~~~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_bf3d4.dir/build.make:85: CMakeFiles/cmTC_bf3d4.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_bf3d4/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __sparc__
+  return ((int*)(&__sparc__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __hppa exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_483ba/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_483ba.dir/build.make CMakeFiles/cmTC_483ba.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_483ba.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_483ba.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__hppa’ undeclared (first use in this function)
+    7 |   return ((int*)(&__hppa))[argc];
+      |                   ^~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_483ba.dir/build.make:85: CMakeFiles/cmTC_483ba.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_483ba/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __hppa
+  return ((int*)(&__hppa))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __i386 exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_dc58a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dc58a.dir/build.make CMakeFiles/cmTC_dc58a.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc58a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dc58a.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__i386’ undeclared (first use in this function)
+    7 |   return ((int*)(&__i386))[argc];
+      |                   ^~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_dc58a.dir/build.make:85: CMakeFiles/cmTC_dc58a.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_dc58a/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __i386
+  return ((int*)(&__i386))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __aarch64__ exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_cc4a1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cc4a1.dir/build.make CMakeFiles/cmTC_cc4a1.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc4a1.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cc4a1.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__aarch64__’ undeclared (first use in this function)
+    7 |   return ((int*)(&__aarch64__))[argc];
+      |                   ^~~~~~~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_cc4a1.dir/build.make:85: CMakeFiles/cmTC_cc4a1.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_cc4a1/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __aarch64__
+  return ((int*)(&__aarch64__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __ppc__ exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1aa02/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1aa02.dir/build.make CMakeFiles/cmTC_1aa02.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1aa02.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1aa02.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__ppc__’ undeclared (first use in this function)
+    7 |   return ((int*)(&__ppc__))[argc];
+      |                   ^~~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_1aa02.dir/build.make:85: CMakeFiles/cmTC_1aa02.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_1aa02/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __ppc__
+  return ((int*)(&__ppc__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __powerpc exist failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_80e85/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_80e85.dir/build.make CMakeFiles/cmTC_80e85.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_80e85.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_80e85.dir/CheckSymbolExists.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘__powerpc’ undeclared (first use in this function)
+    7 |   return ((int*)(&__powerpc))[argc];
+      |                   ^~~~~~~~~
+/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_80e85.dir/build.make:85: CMakeFiles/cmTC_80e85.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_80e85/fast] Error 2
+
+
+File /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __powerpc
+  return ((int*)(&__powerpc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0972e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0972e.dir/build.make CMakeFiles/cmTC_0972e.dir/build
+gmake[1]: Entering directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0972e.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_0972e.dir/src.c.o -c /home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0972e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0972e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_0972e.dir/src.c.o -o cmTC_0972e 
+/usr/bin/ld: CMakeFiles/cmTC_0972e.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_0972e.dir/build.make:106: cmTC_0972e] Error 1
+gmake[1]: Leaving directory '/home/iamgron/Documents/Fac/M2/SMC/systemc-2.3.3/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_0972e/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

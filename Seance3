@@ -1,0 +1,39 @@
+
+    I0              I1
+    
+          VGSB ?
+
+    T0              T1
+
+
+signaux vci 
+          cmd_val_I0                                                                                rsp_val_I0
+          cmd_ack_I0                                                                                rsp_ack_I0
+
+    cmd   
+          cmd_I0        : selection du type d'op
+          addr_I0       : @ cible                                                                   rdata
+          Wdata_I0
+          BE_I0         : byte enable, le type de transaction (word, half word, byte)
+          plen_I0       : packet length
+          EOP_I0        : end of packet
+          SRCID         : id source                                                             |   Reop_I0
+          trd_id        : thread id si multithread                                              |-> SRc_id_I0
+          pkt_id        :                                                                       |   trdid_I0
+                                                                                                |   pkt_id_I0
+
+Le VGSB a une partie data path et une partie FSM (partie controle)
+
+Voir schéma papier
+
+Latence : nb de cycles entre emsission de la commande et la reception de la dernière réponse.
+            Latence = N + 1 DANS LE MEILLEUR DES CAS avec N le nombre de mots échangés.          
+
+Débit : nb d'octets par cycles : 4N / N+1
+                                  |     durée transaction
+                                  ----- nb octets
+
+FSM : 
+    IDLE : le bus n'est pas aloué
+    CMD : commande en cours
+    RSP : reponse en cours

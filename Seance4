@@ -1,0 +1,17 @@
+NoC : Objectifs (netwwork on chip)
+
+les bus ne suffisent plus quand on a bcp de cores. On doit avoir N cores pour M mémoires, mais l'interconnection 
+entre les cores et les mem pose problème
+
+But : faire plusieurs transactions en une fois
+problemes : interblocage du réseau, fils trop longs : on a tendance a diminuer leur hauteur, leur largeur mais pas leur longueur... Or
+            R = K L/ (WH) donc la résistance augmante a mesure qu'on diminue l'encombrement des fils
+
+            Pertes de signal dues au fils longs : une meme horloge n'arrive pas en meme temps a différents endroits du 
+            circuit
+
+Solution : le SPIN : arbre de crossbar
+
+Meshs séparés requetes / réponses pour éviter les deadlocks 
+
+
