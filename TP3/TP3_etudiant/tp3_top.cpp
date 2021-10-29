@@ -167,18 +167,18 @@ int _main(int argc, char *argv[])
 	//////////////////////////////////////////////////////////////////////////
 	MappingTable maptab(TO BE COMPLETED);
 
-	maptab.add(Segment("seg_reset", SEG_RESET_BASE, SEG_RESET_SIZE, IntTab(TGTID_ROM), TO BE COMPLETED));
+	maptab.add(Segment("seg_reset", SEG_RESET_BASE, SEG_RESET_SIZE, IntTab(TGTID_ROM), true));
 
-	maptab.add(Segment("seg_kcode", SEG_KCODE_BASE, SEG_KCODE_SIZE, IntTab(TGTID_RAM), TO BE COMPLETED));
-	maptab.add(Segment("seg_kdata", SEG_KDATA_BASE, SEG_KDATA_SIZE, IntTab(TGTID_RAM), TO BE COMPLETED));
-	maptab.add(Segment("seg_kunc" , SEG_KUNC_BASE , SEG_KUNC_SIZE , IntTab(TGTID_RAM), TO BE COMPLETED));
-	maptab.add(Segment("seg_code" , SEG_CODE_BASE , SEG_CODE_SIZE , IntTab(TGTID_RAM), TO BE COMPLETED));
-	maptab.add(Segment("seg_data" , SEG_DATA_BASE , SEG_DATA_SIZE , IntTab(TGTID_RAM), TO BE COMPLETED));
-	maptab.add(Segment("seg_stack", SEG_STACK_BASE, SEG_STACK_SIZE, IntTab(TGTID_RAM), TO BE COMPLETED));
+	maptab.add(Segment("seg_kcode", SEG_KCODE_BASE, SEG_KCODE_SIZE, IntTab(TGTID_RAM), true));
+	maptab.add(Segment("seg_kdata", SEG_KDATA_BASE, SEG_KDATA_SIZE, IntTab(TGTID_RAM), true));
+	maptab.add(Segment("seg_kunc" , SEG_KUNC_BASE , SEG_KUNC_SIZE , IntTab(TGTID_RAM), false));
+	maptab.add(Segment("seg_code" , SEG_CODE_BASE , SEG_CODE_SIZE , IntTab(TGTID_RAM), true));
+	maptab.add(Segment("seg_data" , SEG_DATA_BASE , SEG_DATA_SIZE , IntTab(TGTID_RAM), true));
+	maptab.add(Segment("seg_stack", SEG_STACK_BASE, SEG_STACK_SIZE, IntTab(TGTID_RAM), true));
 
-	maptab.add(Segment("seg_tty"  , SEG_TTY_BASE  , SEG_TTY_SIZE  , IntTab(TGTID_TTY), TO BE COMPLETED));
+	maptab.add(Segment("seg_tty"  , SEG_TTY_BASE  , SEG_TTY_SIZE  , IntTab(TGTID_TTY), false));
 
-	maptab.add(Segment("seg_gcd"  , SEG_GCD_BASE  , SEG_GCD_SIZE  , IntTab(TGTID_GCD), TO BE COMPLETED));
+	maptab.add(Segment("seg_gcd"  , SEG_GCD_BASE  , SEG_GCD_SIZE  , IntTab(TGTID_GCD), false));
 
 	std::cout << std::endl << maptab << std::endl;
 
