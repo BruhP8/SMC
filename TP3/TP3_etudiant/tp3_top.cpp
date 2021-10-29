@@ -201,7 +201,7 @@ int _main(int argc, char *argv[])
 
 	Loader	loader(sys_path, app_path);
 
-	VciXcacheWrapper<vci_param, Mips32ElIss>* proc
+	VciXcacheWrapper<vci_param, Mips32ElIss>* proc;
 	proc = new VciXcacheWrapper<vci_param, Mips32ElIss>("proc",
                                                             0, 
                                                             maptab, 
@@ -278,7 +278,7 @@ int _main(int argc, char *argv[])
 	bus->p_clk(signal_clk);
 	bus->p_resetn(signal_resetn);
         
-        bus->p_to_initiatior[0](signal_vci_proc);
+        bus->p_to_initiator[0](signal_vci_proc);
         bus->p_to_target[TGTID_RAM](signal_vci_ram);
         bus->p_to_target[TGTID_ROM](signal_vci_rom);
         bus->p_to_target[TGTID_TTY](signal_vci_tty);
