@@ -167,9 +167,6 @@ int _main(int argc, char *argv[])
 	//////////////////////////////////////////////////////////////////////////
 	MappingTable maptab(addr_size, IntTab(8), IntTab(2), 0xFF000000);
 
-
-	MappingTable maptab(addr_size, IntTab(8), IntTab(2), 0xFF000000);
-
 	maptab.add(Segment("seg_reset", SEG_RESET_BASE, SEG_RESET_SIZE, IntTab(TGTID_ROM), true));
 	maptab.add(Segment("seg_kcode", SEG_KCODE_BASE, SEG_KCODE_SIZE, IntTab(TGTID_RAM), true));
 	maptab.add(Segment("seg_kdata", SEG_KDATA_BASE, SEG_KDATA_SIZE, IntTab(TGTID_RAM), true));
