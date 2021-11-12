@@ -1,0 +1,3 @@
+dans top :
+    changer la taille du segment du framebuffer
+        size_fbf_size = 0x00401000
