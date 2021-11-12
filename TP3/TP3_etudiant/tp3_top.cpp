@@ -48,31 +48,31 @@
 #include "mapping_table.h"
 
 #define SEG_RESET_BASE	0xBFC00000
-#define SEG_RESET_SIZE	4000
+#define SEG_RESET_SIZE	0x1000//4000
 
 #define SEG_KCODE_BASE	0x80000000
-#define SEG_KCODE_SIZE	64000
+#define SEG_KCODE_SIZE	0x10000//64000
 
 #define SEG_KDATA_BASE	0x81000000
-#define SEG_KDATA_SIZE	64000
+#define SEG_KDATA_SIZE	0x10000//64000
 
 #define SEG_KUNC_BASE 	0x82000000
-#define SEG_KUNC_SIZE 	64000
+#define SEG_KUNC_SIZE 	0x10000//64000
 
 #define SEG_DATA_BASE 	0x01000000
-#define SEG_DATA_SIZE 	64000
+#define SEG_DATA_SIZE 	0x10000//64000
 
 #define SEG_CODE_BASE 	0x00400000
-#define SEG_CODE_SIZE 	64000
+#define SEG_CODE_SIZE 	0x10000//64000
 
 #define SEG_STACK_BASE	0x02000000
-#define SEG_STACK_SIZE	64000
+#define SEG_STACK_SIZE	0x10000//64000
 
 #define SEG_TTY_BASE  	0x90000000
-#define SEG_TTY_SIZE  	64
+#define SEG_TTY_SIZE  	0x40//64
 
 #define SEG_GCD_BASE  	0x95000000
-#define SEG_GCD_SIZE  	16
+#define SEG_GCD_SIZE  	0x10//16
 
 // TGTID definition
 #define TGTID_ROM	0
@@ -165,7 +165,7 @@ int _main(int argc, char *argv[])
 	//////////////////////////////////////////////////////////////////////////
 	// Mapping Table
 	//////////////////////////////////////////////////////////////////////////
-	MappingTable maptab(addr_size, IntTab(2), IntTab(2), 0xFF000000);
+	MappingTable maptab(addr_size, IntTab(8), IntTab(2), 0xFF000000);
 
 	maptab.add(Segment("seg_reset", SEG_RESET_BASE, SEG_RESET_SIZE, IntTab(TGTID_ROM), true));
 
@@ -278,7 +278,7 @@ int _main(int argc, char *argv[])
 	bus->p_clk(signal_clk);
 	bus->p_resetn(signal_resetn);
         
-        bus->p_to_initiator[0](signal_vci_proc);
+        bus->p_to_initiator[0]     (signal_vci_proc);
         bus->p_to_target[TGTID_RAM](signal_vci_ram);
         bus->p_to_target[TGTID_ROM](signal_vci_rom);
         bus->p_to_target[TGTID_TTY](signal_vci_tty);

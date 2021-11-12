@@ -33,7 +33,7 @@ MappingTable :
 
         addr_size  : nombre de bits composant les adresses VCI, dans notre cas 32
         IntTab(1)  : Nous n'avons qu'un seul initiateur, un seul bit suffit par conséquent
-        IntTab(2)  : Nous n'avons que 4 cibles, deux bits suffisent a les représenter
+        IntTab(8)  : Nous n'avons que 4 cibles, deux bits suffisent a les représenter
         0xFF000000 : Les 8 premiers bits sont ceux qui nous intéressent
 
 Les segments GCD, TTY et KUNC doivent etre non cacheables

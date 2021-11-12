@@ -1,0 +1,36 @@
+Cache L1
+
+Présentation
+
+Diminution de la latence d'acces mem pour palier aux faiblesses des interconnects. Diminution du CPI.
+ireq valid en sortie du proc : le contenu des registres et donc la requete est valide et doit etre traité. Si 0 ne pas s'en occuper
+
+ENtre le cache L1 et le processeur on trouve la MMU
+load, sotre, linked load, store conditional, sync et inval 
+
+Deux caches séparés (I & D) 
+1 port vci partagé par les deux caches 
+les lectures sont bloquantes, et pas les écritures (buffer ecritures postées) tant que le buffer n'est pas plein
+traite plusieurs transactions vci simultanées
+Dans notre cas, pas de MMU
+
+Automates du chache
+
+4 (5) automates
+Icache et CMD
+             -> pour pouvoir paralléliser, deux caches, deux FSM. CMD et RSP pour pipeliner
+Dcache et RSP
+Write buffer
+
+    Icache FSM gère les demandes de lecture d'instr
+    Dcache FSM gère les demandes de lecture et d'écriture de données, ainsi que l'invalidation
+        XTN : external, opération d'invalidation d'une ligne de cache (via ecriture dans un buffer de coproc2)
+    CMD gère les commandes Vci et l'usage du write buffer
+    RSP gère les réponses VCI pour les automates icache et dcache. Bascules RS pour synchro les erreurs et la terminaison
+
+Write Buffer
+
+capacité une ligne de cache, 3 états sur 2 bits :
+    10 empty
+    00 open 
+    01 locked
