@@ -4,6 +4,13 @@ Auteurs
 
 scp -r -o ProxyJump=legoueix@durian.lip6.fr Documents/Fac/M2/SMC/TP3/ legoueix@anerio:Bureau    : pour scp d'une machine perso vers une machine de la salle de tp facilement
 
+./simulator.x -DEBUG 0 -NCYCLES 10000 > debug.txt
+ctags -R /users/enseig/alain/giet_2011/ .
+~franck/tracelog tags soft/app.bon.txt soft/sys.bin.txt debug.txt
+vim trace.s
+
+a faire depuis le dossier tpx_etudiant pour avoir un trace de debug.
+
 # TD3 : Protocole VCI/OCP
 
 soft/seg.id : adresses pour le logiciel 
