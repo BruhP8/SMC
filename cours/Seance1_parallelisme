@@ -31,7 +31,8 @@ Types de // :
     // d'instr (ILP Instr level //) = exec de plrs instr en // d'un prog séquentiel
         - // automatique par le métériel à la volée
         - // par le programmeur ou le compil pour les algo spécifiques (signal, images...)
-        bcp utilisé par intel, exec superscalaire, dans le désordre (renommage de registres éliminant les dep) si besoin, spéculative (exec // de séquences d'instr par ex de if then else) avec prédiction de branchement (hypthèses sur les conditions et sauts)
+        bcp utilisé par intel, exec superscalaire, dans le désordre (renommage de registres éliminant les dep) si besoin, spéculative (exec //
+        de séquences d'instr par ex de if then else) avec prédiction de branchement (hypthèses sur les conditions et sauts)
 
     Le // des taches = exec concurrente de programmes pouvant (ou pas) communiquer sur le meme MPSOC et la meme memoire (ou pas)
         - // auto guidée par programmeur (OpenMP, language capable d'indiquer des portions de code executables en // avec de pragma)
@@ -43,7 +44,9 @@ Types de // :
 
 Limite du // & loi Amdahl : 
 
-    Constat : les innovations imposent une augmentation de la conso pour des gains de perf de moins en moins intéressants. Au dela de 100W/cm³ impossible de d'air cool. ON peut pas pousser un single core a l'infini, début des cores plus simples mais plus nombreux. La perf doit venir du // mais ca renvoie le soucis d'augmentation des perf au dev
+    Constat : les innovations imposent une augmentation de la conso pour des gains de perf de moins en moins intéressants. Au dela de 100W/cm² impossible de 
+    d'air cool. ON peut pas pousser un single core a l'infini, début des cores plus simples mais plus nombreux. La perf doit venir du // mais ca renvoie le 
+    soucis d'augmentation des perf au dev
 
     La // en rêve : si on // en 4 on va 4x plus vite, en vrai c'est pas le cas, car certaines parties doivent rester séquentielles :
         speedup (n) = durée (1)  / durée (n) ou n = le nb de cores.
