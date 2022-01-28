@@ -1,0 +1,15 @@
+1TB de mémoire physique, 4GB par cluster (32 bits)
+Deux mode pour la MMU :
+    - Activée
+    - Désactivée : extension a 40b en ajoutant une adresse de cluster
+
+On remplace la traditionelle répartition 2GB/2GB entre kernel et user en 4GB-2MB pour l'user et seulement 2MB pour le kernel
+
+espace phyisque :
+    section dev : adresses periph, tty etc
+    kheap : allocations dynamiques du kernel
+    kdata : 
+    kernel
+
+
+allocation des pages

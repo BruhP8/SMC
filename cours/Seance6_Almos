@@ -1,0 +1,29 @@
+Périphériques internes :  DMA, XICU, ROM...
+
+ALMOS MKH :
+    os dédié ManyCore en CC-Numa
+        |       |          |  |-> bcp de dbanc mémoire
+        |       |          |-> caches cohérents
+        |       |-> plusieurs dizaines de cores 
+        |-> pas seulement many, mais concu pour ca
+    Advanced Locality Management OS -> controle le placement des threads et objets mémoires (pour éviter d'avoir 
+    un thread a un endroit et la c de l'autre coté de la puce). En pratique : répartir les données de manière 
+    la plus homogène possible
+
+    Multi Kernel Hybrid : chaque cluster a un noyau qui gère les ressources locales. Les noyaux communiquent soit 
+    en remote access soit en client serveur. Le choix de méthode est très important
+        remote access : lents  (ecriture coproc 2 -MMu-, écritures via le dspin, attente réponse, ecriture cache)
+        client / serveur : les noyaux sont des serveurs de structures de données gérant des demandes de modifications, on "post" 
+        la requette dans une file d'attente puis on a juste a attendre l'aquittement. Lent aussi, mais moins dans certaines circonstances 
+        car pas besoin de prise de vérou sur les structures vu qu'elles appartiennent au noyau qui fait l'opération
+
+
+ALMOS thèse de mr ALMALESS : proposer un os passant a l'échelle sur tsar (qui était encore 32b), contrib : gestion mémoire des table de pages, gestion processus
+ALMOS-MK : thèse de mr KARAOUI : mettre en place un systeme de fichier pour tsar, contrib : VFS distribué, espace mémoire physique 40b, structuration Multi
+            kernel avec echanges clients-serveurs 
+ALMOS-MKH : re-écriture complète par alain greiner : rendre le code indépendant de tsar, simplification et commentaires, utiliser les deux modes de communication
+            (client/serv ET remote access). Objectif : il est possible de passer a l'échelle sans que l'os soit un bottleneck
+
+Pourquoi est on encore 32b ? On pouvait pas avoir de 64lel, mais ca consomme moins donc c'est quand meme avantageux... Sur du ManyCore c'est un avantage vu q'uon 
+a bcp de cores sur une surface réduite. Simplifie aussi les caches ce qui est vital.
+Par contre 32bit implique de n'avoir que 4Go de mémoire ce qui est très peu.

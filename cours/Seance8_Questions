@@ -1,0 +1,80 @@
+Reduction du nombre d'accès mémoires distants et minimisation des mémoires globales
+
+Process et Thread
+    Comprendre l'implémentation de Thread et des process dans un contexte multikernel
+
+    Un process, c'est un conteneur des ressources necessaires a une appli dont :
+        - Espace virtuel VSL GPT
+        - fichiers ouverts (FDT File Descriptor Table)
+        - console TTY
+        - liste des threads
+
+    Pour Almos, un process peut etre présent dans plusieurs clusters (a condition qu'il soit attribué a au moins un des threads, ce qui signifie tout dupliquer d'autant)
+
+    PID :
+        process id, 32 bits -> 16MSB : CXY les coordonnées du cluster, 16 LSB : LPID LocalPID, l'id du processus dans le cluster 
+    
+    3 types de cluster pour un process :    
+        - Owner     : le cluster dans lequel le process est né
+        - Reference : le cluster qui détient la structure process de référence (initialement le meme que le Owner mais migration possible)
+        - Copie(s)  : le(s) cluster(s) ayant au minimum un des threads du processus 
+
+    Dans chaque cluster on trouve une structure ClusterManager qui en décrit toutes les ressources dont :
+        - paramètres globaux de la plateforme (nb cluster, etc...)
+        - paramètres locaux (cores, mémoires...)
+        - gestion des cores (scheduler, un par core sur Almos)
+        - liste des devices du cluster 
+        - structures de données mémoires (file Descriptor, allocateurs du noyau)
+        - structures rpc (remote procedure call) 
+        - DQTT 
+        - process manager 
+            - PREF table (process reference table) [LPID]
+                * pointeur étandu 64b vers adresse Process de reference 
+                    -> pointe vers chaque copies 
+            - TBL_COPY[LPID] : liste des copies des process 
+                * pointeur étandu 64b vers copies (liste doublement chainée circulaire)
+            - local_root
+                * pointeur vers process de ce thread
+    Threads 
+        - TRDID 
+            * MSB : CXY, LSB : LTID
+        - Type 
+            * USR : utilisateur, les plus nombreux
+            * DEV : device thread chargé de vérifier la file d'attente d'un device specifique et d'exécuter la requete le cas echeant.
+            * RPC : files d'attentes
+            * IDL : Idle. Sur Almos, c'est un thread vide dans le cas où le scheduler n'a rien a dire.
+        - FLAGS 
+            attribut (detached : personne n'attend la disparition du thread, vidage de la pile aisé, joinDone, KillDone)
+        - BLOCKED : signale si le thread est pret ou non (cad qu'il est en attente de qq chose)
+        - PROCESSLocal
+        - CORE 
+        - CPUXFPU
+        - XLIST : chainage des autres threads en attente d'une meme ressource que le thread courrant
+        - requete : description de la requete émise 
+        - réponse 
+        - lock_count
+
+Fork / exec 
+
+Sous unix, fork duplique le process, mais quoi exactement ?
+Pour nous, un fork duplique le process sur un cluster choisi par la DQDT (donc un cluster relativement peu occupé). Il hérite 
+d'une copie du thread qui a fait le fork, d'une copie du contexte CPU et FPU, d'une copie D'UNE PARTIE de l'espace virtuel, en fonction 
+des types de segment : DATA, MMAP, REMOTE sont copiés à l'identique. Les pages mappées sont marquées pour le père et le fils en 
+non_writable, et le compteur de référence des pages est incrémenté.
+Copie également de la stack, du segment code et file.
+
+exec détruit tous les threads de toutes les copies du process quel que soit le cluster
+
+création d'un thread sur nouveau clsuter 
+    rpc roc_thread_user_create 
+    arg pthread_attr
+    rep_trd 
+    cluster_get_reference_from_pic()
+    copie de la structure process de reference vide
+    creation du thread nouveau
+
+avantage    : évite un grand nombre de verrous, dinimune le traffic sur le noc, meilleure utilisation du cache local du client 
+desavantage : round trip
+
+
+exam jussqu'aux questions du tme10
